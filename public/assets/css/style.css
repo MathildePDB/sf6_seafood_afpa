@@ -1,32 +1,45 @@
 /***STYLE***/
 /*fonts*/
-@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Volkhov&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@600&family=Satisfy&display=swap');
 h1 {
-    font-family: "Volkhov", serif;
+    font-family: "Raleway", serif;
     text-transform: uppercase;
     font-size: 100px;
     color: #fafafa;
 }
 h2 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
     text-transform: uppercase;
+    font-size: 50px;
 }
 h3 {
     font-family: "Satisfy", sans-serif;
+    font-size: 35px;
 }
 h4 {
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 300;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+h5 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    text-transform: uppercase;
 }
 p {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
 }
 a {
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
+    font-size: 20px;
+}
+.f-70 {
+    font-size: 70px;
 }
 .txt-white {
     color: #fafafa;
@@ -126,7 +139,7 @@ a {
 }
 .card {
     border: 0;
-    border-radius: 0;
+    border-radius: 0 !important;
 }
 /*section our food menu*/
 .background-3 {
@@ -166,8 +179,8 @@ a {
 	flex-direction: column;
 }
 .img-small {
-    width: 30px;
-    height: auto;
+    width: 60px;
+    object-fit: fill;
 }
 .img-gallery {
     width: 100%;
@@ -182,10 +195,18 @@ a {
 .card-button:focus {
     color: #9fc9dd;
 }
-#box-date {
-    position: relative;
-    top: 80px;
-    right: -280px;
+.card-img-overlay {
+    z-index: 1;
+}
+.card-img-overlay-2 {
+    position: absolute; 
+    top: 10px;
+    left: 240px;
+}
+.img-card {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 /***PAGE***/
 
