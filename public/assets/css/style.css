@@ -1,0 +1,226 @@
+/***STYLE***/
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Volkhov&display=swap');
+h1 {
+    font-family: "Volkhov", serif;
+    text-transform: uppercase;
+    font-size: 100px;
+    color: #fafafa;
+}
+h2 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+h3 {
+    font-family: "Satisfy", sans-serif;
+}
+h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+p {
+    font-family: "Roboto", sans-serif;
+}
+a {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+.txt-white {
+    color: #fafafa;
+}
+.txt-blue {
+    color: #9fc9dd;
+}
+.sub-title {
+    font-size: 53px;
+    letter-spacing: 1px;
+}
+.nav-item a:hover {
+    color: #9fc9dd;
+}
+.nav-link:focus, 
+.nav-link:hover {
+    color:#9fc9dd;
+}
+.btn-nav {
+    border-radius: 0;
+    border: solid 1px;
+    border-color: #9fc9dd;
+    color: #9fc9dd;
+}
+.col-750 {
+    height: 750px;
+}
+.rating {
+    width: 100px;
+}
+.p-100 {
+    padding: 100px 0;
+}
+.btn-page {
+    border-radius: 1rem;
+    background-color: #282525;
+    text-transform: uppercase;
+    margin: 50px 20px;
+    padding: 5px 10px;
+}
+.bg-grey {
+    background-color: #212529;
+}
+/***HOME***/
+/*Section header*/
+.accueil {
+    height: 849px;
+}
+.txt-deco {
+    font-size: 30px;
+    padding: 3px;
+    border-top: solid #fafafa 3px;
+    border-bottom: solid #fafafa 3px;
+    line-height: 1em;
+    margin: 0 20px;
+}
+/*section about us*/
+.background-1 {
+    background-image: url("/images/about-us-bg.png");
+    background-color: 0, 0, 0, 0.5;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.about {
+    padding: 75px 0;
+}
+.frame {
+    background-color:#282525;
+    z-index: 100;
+}
+.dbl-border {
+    background-color: #282525;
+    height: 500px;
+    width: 500px;
+    border: solid #fafafa 1px;
+}
+.about-photo-1 {
+    margin-left: 120px;
+}
+.about-photo-2 {
+    margin-left: -100px;
+}
+/*section specialities*/
+.background-2 {
+    background-image: url("/images/special-bg.jpg");
+    background-color: black;
+    overflow: hidden;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.card {
+    border: 0;
+    border-radius: 0;
+}
+/*section our food menu*/
+.background-3 {
+    background-image: url("/images/our-menu-bg-5.jpg");
+    background-color: black;
+    overflow: hidden;
+	background-position: left center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.dbl-border-2 {
+    background-color: transparent;
+    border: solid #fafafa 1px;
+    margin: 5px;
+}
+.column {
+    flex-direction: column;
+}
+.encart {
+    padding: 75px 20px 100px 450px;
+}
+.square {
+    margin: 50px 30px;
+}
+/* section opening time */
+.background-4 {
+    background-image: url("/images/opening-bg.png");
+    overflow: hidden;
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.img-small {
+    width: 30px;
+    height: auto;
+}
+.img-gallery {
+    width: 100%;
+    height: auto;
+}
+/* section latest */
+.card-button {
+    color: #212529;
+    text-decoration: underline;
+}
+.card-button:hover,
+.card-button:focus {
+    color: #9fc9dd;
+}
+#box-date {
+    position: relative;
+    top: 80px;
+    right: -280px;
+}
+/***PAGE***/
+
+/***MENU***/
+
+/***RESERVATION***/
+
+/***BLOG***/
+
+/***SHOP***/
+
+/***ABOUT***/
+
+/***MEDIA QUERIES***/
+/* Petits appareils */
+@media screen and (max-width:576px) {
+
+}
+/* Téléphones */
+@media screen and (min-width:577px) and (max-width:768px) {
+
+}
+/* Tablettes */
+@media screen and (min-width:769px) and (max-width:992px) {
+ 
+}
+/* Ordinateurs */
+@media screen and (min-width:993px) and (max-width:1200px) {
+ 
+}
+/* Ecrans larges */
+@media screen and (min-width:1201px) and (max-width:1400px) {
+
+}
+/* Ecrans très grands */
+@media screen and (min-width:1401px) {
+ 
+}

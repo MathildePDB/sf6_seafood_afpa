@@ -1,0 +1,72 @@
+<section>
+	<div id="carouselHome" class="carousel slide carousel-fade">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="{{ asset('images/slideshow-25.jpg') }}" class="d-block w-100" alt="...">
+				<div class="carousel-caption">
+					<div class="text-center text-white mb-0 d-flex justify-content-center align-items-center">
+						<p class="txt-deco">EST.</p>
+						<img src="images/wheel.png" alt="">
+						<p class="txt-deco">1974</p>
+					</div>
+					<div class="text-center">
+						<h1>Seafood</h1>
+						<p class="sub-title txt-blue">Best Restaurant</p>
+						<img src="images/quality-food.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('images/slideshow-26.jpg') }}" class="d-block w-100" alt="...">
+				<div class="carousel-caption">
+					<div class="text-center text-white mb-0 d-flex justify-content-center align-items-center">
+						<p class="txt-deco">EST.</p>
+						<img src="images/wheel.png" alt="">
+						<p class="txt-deco">1974</p>
+					</div>
+					<div class="text-center">
+						<h1>Seafood</h1>
+						<p class="sub-title txt-blue">Best Restaurant</p>
+						<img src="images/quality-food.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('images/slideshow-28.jpg') }}" class="d-block w-100" alt="...">
+				<div class="carousel-caption">
+					<div class="text-center text-white mb-0 d-flex justify-content-center align-items-center">
+						<p class="txt-deco">EST.</p>
+						<img src="images/wheel.png" alt="">
+						<p class="txt-deco">1974</p>
+					</div>
+					<div class="text-center">
+						<h1>Seafood</h1>
+						<p class="sub-title txt-blue">Best Restaurant</p>
+						<img src="images/quality-food.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</section>
+<script>
+	const myCarouselElement = document.querySelector('#carouselHome')
+
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 4000,
+        touch: true
+        })
+</script>
