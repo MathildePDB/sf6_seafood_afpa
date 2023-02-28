@@ -1,11 +1,23 @@
 /***STYLE***/
+/* couleurs */
+:root {
+    --bs-white: #fafafa;
+    --bs-white-tr: #908C8C;
+    --bs-blue-light: #9fc9dd;
+    --bs-dark: #282525;
+    --bs-grey: #212529;
+    --bs-red: #ac4039;
+    --bs-font-body:"Raleway", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    --bs-font-title: "Raleway";
+    --bs-font-decor: "Satisfy", Roboto, Arial;
+}
+
 /*fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Raleway:wght@600&family=Satisfy&display=swap');
 h1 {
     font-family: "Raleway", serif;
     text-transform: uppercase;
     font-size: 100px;
-    color: #fafafa;
 }
 h2 {
     font-family: "Raleway", sans-serif;
@@ -41,62 +53,36 @@ a {
 .f-70 {
     font-size: 70px;
 }
-.txt-white {
-    color: #fafafa;
+.txt-grey {
+    color: var(--bs-white-tr);
 }
-.txt-blue {
-    color: #9fc9dd;
+.txt-dark {
+    color: var(--bs-dark);
 }
 .sub-title {
     font-size: 53px;
     letter-spacing: 1px;
 }
-.nav-item a:hover {
-    color: #9fc9dd;
+.txt-white {
+    color: var(--bs-white);
 }
-.nav-link:focus, 
-.nav-link:hover {
-    color:#9fc9dd;
+.txt-blue {
+    color: var(--bs-blue-light);
 }
-.btn-nav {
-    border-radius: 0;
-    border: solid 1px;
-    border-color: #9fc9dd;
-    color: #9fc9dd;
-}
-.col-750 {
-    height: 750px;
-}
-.rating {
-    width: 100px;
-}
-.p-100 {
-    padding: 100px 0;
-}
-.btn-page {
-    border-radius: 1rem;
-    background-color: #282525;
-    text-transform: uppercase;
-    margin: 50px 20px;
-    padding: 5px 10px;
-}
+/* background */
 .bg-grey {
-    background-color: #212529;
+    background-color: var(--bs-grey);
 }
-/***HOME***/
-/*Section header*/
-.accueil {
-    height: 849px;
+.frame {
+    background-color:var(--bs-dark);
+    z-index: 100;
 }
-.txt-deco {
-    font-size: 30px;
-    padding: 3px;
-    border-top: solid #fafafa 3px;
-    border-bottom: solid #fafafa 3px;
-    line-height: 1em;
-    margin: 0 20px;
+.dbl-border {
+    background-color: var(--bs-dark);
+    height: 500px;
+    width: 500px;
+    border: solid var(--bs-white) 1px;
 }
-/*section about us*/
 .background-1 {
     background-image: url("/images/about-us-bg.png");
     background-color: 0, 0, 0, 0.5;
@@ -106,29 +92,9 @@ a {
 	display: flex;
 	flex-direction: column;
 }
-.about {
-    padding: 75px 0;
-}
-.frame {
-    background-color:#282525;
-    z-index: 100;
-}
-.dbl-border {
-    background-color: #282525;
-    height: 500px;
-    width: 500px;
-    border: solid #fafafa 1px;
-}
-.about-photo-1 {
-    margin-left: 120px;
-}
-.about-photo-2 {
-    margin-left: -100px;
-}
-/*section specialities*/
 .background-2 {
     background-image: url("/images/special-bg.jpg");
-    background-color: black;
+    background-color: var(--bs-dark);
     overflow: hidden;
 	background-position: center center;
 	background-size: cover;
@@ -137,11 +103,6 @@ a {
 	display: flex;
 	flex-direction: column;
 }
-.card {
-    border: 0;
-    border-radius: 0 !important;
-}
-/*section our food menu*/
 .background-3 {
     background-image: url("/images/our-menu-bg-5.jpg");
     background-color: black;
@@ -153,21 +114,6 @@ a {
 	display: flex;
 	flex-direction: column;
 }
-.dbl-border-2 {
-    background-color: transparent;
-    border: solid #fafafa 1px;
-    margin: 5px;
-}
-.column {
-    flex-direction: column;
-}
-.encart {
-    padding: 75px 20px 100px 450px;
-}
-.square {
-    margin: 50px 30px;
-}
-/* section opening time */
 .background-4 {
     background-image: url("/images/opening-bg.png");
     overflow: hidden;
@@ -178,22 +124,133 @@ a {
 	display: flex;
 	flex-direction: column;
 }
+.background-5 {
+    background-image: url("/images/page-info-bg-3.jpg");
+    overflow: hidden;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+/* images */
 .img-small {
     width: 60px;
+    object-fit: fill;
+}
+.img-min {
+    width: 25px;
     object-fit: fill;
 }
 .img-gallery {
     width: 100%;
     height: auto;
 }
-/* section latest */
+.img-md {
+    width: 100px;
+    object-fit: fill;
+}
+/* links */
+.nav-item a:hover {
+    color: var(--bs-blue-light);
+}
+.nav-link:focus, 
+.nav-link:hover {
+    color: var(--bs-blue-light);
+}
+.btn-nav {
+    border-radius: 0;
+    border: solid 1px;
+    border-color: var(--bs-blue-light);
+    color: var(--bs-blue-light);
+}
+.btn-page {
+    border-radius: 1rem;
+    background-color: var(--bs-dark);
+    text-transform: uppercase;
+    margin: 50px 20px;
+    padding: 5px 10px;
+}
+/* content */
+.col-750 {
+    height: 750px;
+}
+.p-100 {
+    padding: 100px 0;
+}
+.p-200 {
+    padding: 200px;
+}
+.m-10 {
+    margin: 10rem;
+}
+.margin-left-120 {
+    margin-left: 120px;
+}
+.margin-left-negative {
+    margin-left: -100px;
+}
+.padding-75 {
+    padding: 75px 0;
+}
+.column {
+    flex-direction: column;
+}
+.content {
+    box-sizing: border-box;
+    margin: 200px;
+    max-width: 100%;
+}
+
+/* decoration */
+.txt-deco {
+    font-size: 30px;
+    padding: 3px;
+    border-top: solid var(--bs-white) 3px;
+    border-bottom: solid var(--bs-white) 3px;
+    line-height: 1em;
+    margin: 0 20px;
+}
+.border-none-radius {
+    border: 0;
+    border-radius: 0 !important;
+}
+.dbl-border-2 {
+    background-color: transparent;
+    border: solid var(--bs-white) 1px;
+    margin: 5px;
+}
+.encart {
+    padding: 75px 20px 100px 450px;
+}
+.square {
+    margin: 50px 30px;
+}
+.border-grey {
+    border-top: solid 1px var(--bs-white-tr);
+}  
+.d-flex .dots {
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin: 0 10px;
+    flex-grow: 1;
+  }
+.d-flex p {
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+  } 
+/* cards */
 .card-button {
-    color: #212529;
+    color: var(--bs-dark);
     text-decoration: underline;
 }
 .card-button:hover,
 .card-button:focus {
-    color: #9fc9dd;
+    color: var(--bs-blue-light);
 }
 .card-img-overlay {
     z-index: 1;
@@ -208,18 +265,6 @@ a {
     height: 100%;
     object-fit: cover;
 }
-/***PAGE***/
-
-/***MENU***/
-
-/***RESERVATION***/
-
-/***BLOG***/
-
-/***SHOP***/
-
-/***ABOUT***/
-
 /***MEDIA QUERIES***/
 /* Petits appareils */
 @media screen and (max-width:576px) {
