@@ -6,9 +6,12 @@ use App\Entity\Menu;
 use App\Form\MenuType;
 use App\Repository\MenuRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/menu')]
 class MenuController extends AbstractController
@@ -30,13 +33,35 @@ class MenuController extends AbstractController
     }
 
     #[Route('/new', name: 'app_menu_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, MenuRepository $menuRepository): Response
+    public function new(Request $request, MenuRepository $menuRepository, SluggerInterface $slugger): Response
     {
         $menu = new Menu();
         $form = $this->createForm(MenuType::class, $menu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // file uploader
+            /** @var UploadedFile $imageFile */
+            $imageFile = $form->get('image')->getData();
+
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+
+                try {
+                    $imageFile->move(
+                        $this->getParameter('files_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash('message', 'Une erreur s\'est produite lors du téléchargement de votre fichier');
+                }
+
+                $menu->setImageName($newFilename);
+            }
+
             $menuRepository->save($menu, true);
 
             return $this->redirectToRoute('app_menu_index', [], Response::HTTP_SEE_OTHER);

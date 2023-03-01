@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Menu;
+use App\Entity\MenuCategories;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,9 @@ class MenuType extends AbstractType
             ->add('name')
             ->add('price')
             ->add('description')
-            ->add('category')
+            ->add('category', EntityType::class, [
+                'class' => MenuCategories::class
+            ])
         ;
     }
 

@@ -14,4 +14,10 @@ class MainController extends AbstractController
         $active = "btn-nav";
         return $this->render('home/index.html.twig');
     }
+
+    #[Route('/reservation', name: 'app_reservation')]
+    public function resIndex(): Response
+    {
+        return $this->render('reservation/index.html.twig');
+    }
 }
