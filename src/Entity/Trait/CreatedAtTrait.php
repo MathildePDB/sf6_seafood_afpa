@@ -28,4 +28,5 @@ trait CreatedAtTrait
 
         return $this;
     }
+
 }

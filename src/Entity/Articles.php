@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\Trait\CreatedAtTrait;
-use App\Entity\Trait\CreatedTrait;
 use App\Repository\ArticlesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -30,7 +29,7 @@ class Articles
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?blogCategories $categories = null;
+    private ?BlogCategories $categories = null;
 
     #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Images::class, orphanRemoval: true)]
     private Collection $images;
