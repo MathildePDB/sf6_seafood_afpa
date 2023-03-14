@@ -8,6 +8,7 @@
     --bs-dark: #282525;
     --bs-grey: #212529;
     --bs-red: #ac4039;
+    --bs-gold: #cdaa7c;
     --bs-font-body:"Raleway", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
     --bs-font-title: "Raleway";
     --bs-font-decor: "Satisfy", Roboto, Arial;
@@ -82,9 +83,15 @@ a {
 .txt-blue {
     color: var(--bs-blue-light);
 }
+.txt-gold {
+    color: var(--bs-gold);
+}
 /* background */
 .bg-grey {
     background-color: var(--bs-grey);
+}
+.bg-gold {
+    background-color: var(--bs-gold);
 }
 .frame {
     background-color:var(--bs-dark);
@@ -95,6 +102,11 @@ a {
     height: 500px;
     width: 500px;
     border: solid var(--bs-white) 1px;
+}
+.bg-quote {
+    background-image: url("/images/quotation.png");
+    opacity: 0.8;
+    background-repeat: no-repeat;
 }
 .background-1 {
     background-image: url("/images/about-us-bg.png");
@@ -157,13 +169,23 @@ a {
 	display: flex;
 	flex-direction: column;
 }
-/* images */
-.img-small {
-    width: 60px;
-    object-fit: fill;
+.background-7 {
+    background-image: url("/images/page-info-bg-4.jpg");
+    overflow: hidden;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
+/* images */
 .img-min {
     width: 25px;
+    object-fit: fill;
+}
+.img-small {
+    width: 60px;
     object-fit: fill;
 }
 .img-gallery {
@@ -195,9 +217,15 @@ a {
     margin: 50px 20px;
     padding: 5px 10px;
 }
+.btn-search {
+   border-radius: 0rem 0.4rem 0.4rem 0rem; 
+}
 /* content */
 .col-750 {
     height: 750px;
+}
+.p-50 {
+    padding: 0 50px;
 }
 .p-100 {
     padding: 100px 0;

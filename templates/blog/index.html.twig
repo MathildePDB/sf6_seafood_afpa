@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+<section class="background-7">
+	<div class="p-200">
+		<h1 class="txt-white">Blog Masonry</h1>
+		<h3 class="txt-blue">~ The things you want to find ~</h3>
+	</div>
+</section>
+<section class="p-5">
+    {# cards articles blog #}
+    <div class="row p-5">
+    {% for article in articles %}
+        <div class="art col-sm-4 mb-3 mb-sm-0 p-5">
+          <div class="card border-none-radius text-right">
+				<div class="card-img-overlay d-flex justify-content-end align-items-start me-3">
+					<div class="bg-gold d-flex gird">
+						<div class="dbl-border-2 text-white text-center p-2">
+							<p class="h1 px-2 my-0">{{ article.created_at ? article.created_at|date('d') : '' }}</p>
+							<p class="h4 px-2 my-0">{{ article.created_at ? article.created_at|date('F') : '' }}</p>
+						</div>
+					</div>
+				</div>
+				<img src="{{ asset('images/blog-standard-1.jpg') }}" class="card-img-top card border-none-radius" alt="...">
+			</div>
+			<div class="my-4">
+				<h4 class="card-title py-3">{{ article.name }}</h4>
+				<p class="card-text lh-lg">{{ article.description ? article.description|slice(0, 120) }}...</p>
+				<a href="{{ path('app_blog_single', {id:article.id}) }}" class="card-button">Read more</a>
+			</div>
+        </div>
+    {% endfor %}
+	<a href="" id="loadMore">Load more</a>
+    </div>   
+</section>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+<script>
+	$(document).ready (function () {
+	  $(".art").slice(0, 2).show();
+	  $("#loadMore").on("click", function(e){
+		e.preventDefault();
+		$(".art:hidden").slice(0, 2).slideDown();
+		if ($(".art:hidden").length == 0) {
+		  $("#loadMore").text("No Content").addClass("noContent");
+		}
+	  });
+	  })
+	</script>
+{% endblock %}

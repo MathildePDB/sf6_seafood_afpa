@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\AdminController;
 
 use App\Entity\Articles;
 use App\Form\ArticlesType;
@@ -10,10 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/blog')]
+#[Route('/articles')]
 class ArticlesController extends AbstractController
 {
-    #[Route('/', name: 'app_blog_index', methods: ['GET'])]
+    #[Route('/', name: 'app_articles_index', methods: ['GET'])]
     public function index(ArticlesRepository $articlesRepository): Response
     {
         return $this->render('articles/index.html.twig', [

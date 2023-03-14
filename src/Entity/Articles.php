@@ -31,12 +31,18 @@ class Articles
     #[ORM\JoinColumn(nullable: false)]
     private ?BlogCategories $categories = null;
 
-    #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Images::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'articles', targetEntity: Images::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $images;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Tags $tags = null;
+
+    #[ORM\Column(length: 1000, nullable: true)]
+    private ?string $quote = null;
+
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $conclusion = null;
 
     public function __construct()
     {
@@ -135,6 +141,30 @@ class Articles
     public function setTags(?Tags $tags): self
     {
         $this->tags = $tags;
+
+        return $this;
+    }
+
+    public function getQuote(): ?string
+    {
+        return $this->quote;
+    }
+
+    public function setQuote(?string $quote): self
+    {
+        $this->quote = $quote;
+
+        return $this;
+    }
+
+    public function getConclusion(): ?string
+    {
+        return $this->conclusion;
+    }
+
+    public function setConclusion(?string $conclusion): self
+    {
+        $this->conclusion = $conclusion;
 
         return $this;
     }

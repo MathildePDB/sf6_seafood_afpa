@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog single{% endblock %}
+
+{% block body %}
+<section class="background-7">
+	<div class="p-200">
+		<h1 class="txt-white">Blog Single</h1>
+		<h3 class="txt-blue">~ The things you want to find ~</h3>
+	</div>
+</section>
+<main class="p-200 row">
+    <div class="col-md-8 p-50">
+		<!-- carousel : foreach pour les articles -->
+		<section>
+			<div class="card border-none-radius text-right">
+				<div class="card-img-overlay d-flex justify-content-end align-items-start me-3">
+					<div class="bg-gold d-flex gird">
+						<div class="dbl-border-2 text-white text-center p-2">
+							<p class="h1 px-2 my-0">{{ article.created_at ? article.created_at|date('d') : '' }}</p>
+							<p class="h4 px-2 my-0">{{ article.created_at ? article.created_at|date('F') : '' }}</p>
+						</div>
+					</div>
+				</div>
+				<img src="{{ asset('images/blog-standard-1.jpg') }}" class="card-img-top card border-none-radius" alt="...">
+			</div>
+			<div class="d-flex justify-content-left align-items-center mt-5">
+				<div class="d-flex align-items-center pe-5">
+					<img src="{{ asset('images/author-board.png') }}" class="img-small pe-2" alt="">
+					<p class="m-0">{{ article.author }}</p>
+				</div>
+				<div class="d-flex align-items-center">
+					<img src="{{ asset('images/tag-incline.png') }}" class="img-small pe-2" alt="">
+					<p class="m-0">{{ article.tags.name }}</p>
+				</div>
+			</div>
+			<div class="my-2">
+				<h2 class="card-title py-3">{{ article.name }}</h2>
+				<p class="card-text lh-lg">{{ article.description }}</p>
+				<p class="card-text lh-lg ps-5 my-5 py-5 bg-quote"><i>{{ article.quote }}</i></p>
+			</div>
+			<div class="my-2">
+				<h4 class="card-title py-3">Lorem ipsum dolor sit amet.</h4>
+				<!-- insertion des images de l'article -->
+				<div class="d-flex flex-row">
+					<div class="d-flex flex-column">
+						<div class="d-flex pb-4">
+							<img class="pe-3" src="{{ asset('images/blog-single-1.jpg') }}" width="50%" alt="">
+							<img class="pe-3" src="{{ asset('images/blog-single-2.jpg') }}" width="50%" alt="">
+						</div>
+						<div class="pe-3">
+							<img src="{{ asset('images/blog-single-3.jpg') }}" width="100%" alt="">
+						</div>
+					</div>
+					<div class="d-flex justify-content-center align-items-center">
+						<img class="" src="{{ asset('images/blog-single-4.jpg') }}" width="100%" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="my-2">
+				<p class="card-text lh-lg py-3">{{ article.conclusion }}</p>
+			</div>
+			<div class="my-2 d-flex justify-content-between">
+				<div class="d-flex">
+					<p class="pe-2">Share:</p>
+					<a class="px-2" href=""><img class="img-min" src="{{ asset('images/twitter.png') }}" alt=""></a>
+					<a class="px-2" href=""><img class="img-min" src="{{ asset('images/facebook.png') }}" alt=""></a>
+					<a class="px-2" href=""><img class="img-min" src="{{ asset('images/linkedin.png') }}" alt=""></a>
+					<a class="px-2" href=""><img class="img-min" src="{{ asset('images/facebook.png') }}" alt=""></a>
+				</div>
+				<!-- inclure le nombre de commentaires -->
+				<p>Comments</p>
+			</div>
+			<div class="frame p-2">
+				<div class="dbl-border-2 p-5 text-center">
+					<img class="img-md py-2" src="{{ asset('images/author-board.png') }}" alt="">
+					<p class="txt-white py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere consectetur mollitia ab rerum totam labore quam nostrum necessitatibus corporis eos.</p>
+					<h5 class="txt-white py-2">Kathy Larson</h5>
+				</div>
+			</div>
+		</section>
+		<section>
+			<!-- partie commentaires -->
+		</section>
+    </div>
+    {% include "blog/_aside.html.twig" %}  
+</main>
+{% endblock %}

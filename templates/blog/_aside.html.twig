@@ -1,0 +1,63 @@
+<aside class="col-md-4 p-50">
+    <!-- div portrait chef -->
+	<div class="frame d-flex justify-content-center align-items-center p-3">
+		<div class="dbl-border text-white p-2 d-flex justify-content-center align-items-center flex-column">
+			<img class="py-4" src="{{ asset('images/widget-person.png') }}" alt="">
+            <h4>Bryan Bennet</h4>
+            <p class="pb-2 txt-gold">Master Chef</p>
+            <img src="{{ asset('images/signature-3.png') }}" width="30%" alt="">
+		</div>
+	</div>
+    <!-- liste des categories avec le nombre d'articles pour chaque -->
+	<div class="py-5">
+		<h4 class="py-3">Categories</h4>
+	</div>
+    <!-- liste lattest posts -->
+	<div class="py-5">
+		<h4 class="py-3">Latest post</h4>
+		{% for article in articles %}
+		    <div class="d-flex py-3">
+				<img src="" alt="">
+				<div>
+					<p class="m-0"><strong>{{ article.name }}</strong></p>
+					<p class="m-0">{{ article.created_at|date('F d, Y') }}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+    <!-- links instagram (fake) -->
+    <div class="py-5">
+        <h4 class="py-3">Follow Instagram</h4>
+        <div class="d-flex flex-wrap">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-1.jpg') }}" width="30%" alt="">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-2.jpg') }}" width="30%" alt="">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-3.jpg') }}" width="30%" alt="">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-4.jpg') }}" width="30%" alt="">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-5.jpg') }}" width="30%" alt="">
+            <img class="m-1 p-1" src="{{ asset('images/instagram-small-6.jpg') }}" width="30%" alt="">
+        </div>
+    </div>
+    <!-- liste tags -->
+    <div class="py-5">
+        <h4 class="py-3">Tag Cloud</h4>
+		<div class="d-flex flex-wrap py-3">
+            {% for tag in tags %}
+			<button type="button" class="btn btn-outline-dark me-5 my-3 disabled">{{ tag.name }}</button>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- encart publicitaire -->
+    <img class="py-5" src="{{ asset('images/widget-banner.jpg') }}" width="100%" alt="">
+    <!-- search bar -->
+    <form class="d-flex py-5 input-group" role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary btn-search" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </div>
+      </form>
+      
+</aside> 
